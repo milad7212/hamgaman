@@ -5,7 +5,7 @@ import {GoComment} from "react-icons/go"
 
 function PersonCard({ data }) {
   return (
-    <div className="bg-white  ring-2 ring-green-400  rounded shadow-lg overflow-hidden">
+    <div className="bg-white  ring-4 ring-gray-900  rounded shadow-lg overflow-hidden">
       <div className="h-40 p-1 bg-gray-900 rounded-b-sm flex overflow-hidden relative">
         <div className="h-full aspect-square rounded-sm shadow-sm relative">
           <Image className="" src="/images/milad.jpeg" alt="My Image" fill />
