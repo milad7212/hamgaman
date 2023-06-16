@@ -16,14 +16,15 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
+body {
+    margin: 0;
+    font-family: "Yekan", "tahoma", "Ubunt" !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    transation: all 0.3s ease;
+    scroll-behavior: smooth;
+   
+  }
 
