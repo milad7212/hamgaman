@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useCallback, useState } from "react";
 import Header from "../components/header";
 import PersonCard from "../components/personCard";
@@ -10,14 +10,70 @@ function App() {
       id: 1,
       name: "میلاد حسنی",
       skills: ["مهندس عمران", "برقکار", "تراکتور"],
-      favorite: true
+      favorite: true,
+      liked: 100,
+      comments:[
+        {id:12,text:'کارش بعد نیست',
+        writer:{
+        id:235,
+        name:'hasan',
+        family:'hosseni',
+        date:'10/2/2022'
+      }
+    },{id:12,text:'کارش بعد نیست',
+    writer:{
+    id:235,
+    name:'hasan',
+    family:'hosseni',
+    date:'10/2/2022'
+  }
+},
+  ],
+      notes:[{id:25,text:'قرار شد بیاد برام کار کنه', date:'12/4/2023'}]
+
     },
-    { id: 2, favorite: false, name: "سجاد حسنی", skills: ["داربست ", "قالب بندی"] },
-    { id: 3, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 4, favorite: true, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 5, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 6, favorite: true, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 7, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    {
+      id: 2,
+      favorite: false,
+      name: "سجاد حسنی",
+      skills: ["داربست ", "قالب بندی"],
+      liked: 200,
+    },
+    {
+      id: 3,
+      favorite: false,
+      name: "عباد حسنی",
+      skills: ["طراحی نما", "پیمانکار"],
+      liked: 1,
+    },
+    {
+      id: 4,
+      favorite: true,
+      name: "عباد حسنی",
+      skills: ["طراحی نما", "پیمانکار"],
+      liked: 5,
+    },
+    {
+      id: 5,
+      favorite: false,
+      name: "عباد حسنی",
+      skills: ["طراحی نما", "پیمانکار"],
+      liked: 4,
+    },
+    {
+      id: 6,
+      favorite: true,
+      name: "عباد حسنی",
+      skills: ["طراحی نما", "پیمانکار"],
+      liked: 18,
+    },
+    {
+      id: 7,
+      favorite: false,
+      name: "عباد حسنی",
+      skills: ["طراحی نما", "پیمانکار"],
+      liked: 11,
+    },
     // Add more people data
   ]);
 
@@ -27,7 +83,9 @@ function App() {
 
   const clickOnHeart = useCallback(
     (selectedCard) => {
-      const index = dataPeople.findIndex((person) => person.id === selectedCard.id);
+      const index = dataPeople.findIndex(
+        (person) => person.id === selectedCard.id
+      );
       if (index !== -1) {
         const updatedPeople = [...dataPeople];
         updatedPeople[index].favorite = !updatedPeople[index].favorite;
@@ -89,7 +147,11 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Person card */}
             {filteredAndSortedPeople.map((person) => (
-              <PersonCard data={person} key={person.id} clickOnHeart={clickOnHeart} />
+              <PersonCard
+                data={person}
+                key={person.id}
+                clickOnHeart={clickOnHeart}
+              />
             ))}
           </div>
           {isFilterMenuOpen && (

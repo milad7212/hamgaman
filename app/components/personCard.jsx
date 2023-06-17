@@ -2,18 +2,20 @@ import React from "react";
 import Image from "next/image";
 import { BsFillHeartFill } from "react-icons/bs";
 import { GoComment, GoNote } from "react-icons/go";
-import C from "classnames";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 function PersonCard({ data, clickOnHeart }) {
-  const classCard = C({
+  const cardClass = classNames("bg-white", "rounded", "shadow-lg", "overflow-hidden", {
     "ring-gray-900 ring-4": data.favorite,
   });
-  const classIcon = C({
+
+  const iconClass = classNames({
     "text-red-600": data.favorite,
   });
 
   return (
-    <div className={`bg-white rounded shadow-lg overflow-hidden ${classCard}`}>
+    <div className={cardClass}>
       <div className="h-40 p-1 bg-gray-900 rounded-b-sm flex overflow-hidden relative">
         <div className="h-full aspect-square rounded-sm shadow-sm relative">
           <Image
@@ -24,20 +26,20 @@ function PersonCard({ data, clickOnHeart }) {
           />
         </div>
         <div className="flex justify-around flex-col items-center w-[70%]">
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
+            <span className="text-gray-100 ml-2">{data.liked ?? 0}</span>
             <BsFillHeartFill
               size={25}
               className="text-gray-200 cursor-pointer"
             />
-            <span className="text-gray-200 mr-2">{data.hearts ?? 0}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
+            <span className="text-gray-100 ml-2">{data.comments?.length ?? 0}</span>
             <GoComment size={25} className="text-gray-200  cursor-pointer" />
-            <span className="text-gray-200 mr-2">{data.comments ?? 0}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
+            <span className="text-gray-100 ml-2">{data.notes?.length ?? 0}</span>
             <GoNote size={25} className="text-gray-200 cursor-pointer" />
-            <span className="text-gray-200 mr-2">{data.notes ?? 0}</span>
           </div>
         </div>
       </div>
@@ -49,7 +51,7 @@ function PersonCard({ data, clickOnHeart }) {
             <BsFillHeartFill
               onClick={() => clickOnHeart(data)}
               size={25}
-              className={`${classIcon} cursor-pointer`}
+              className={`${iconClass} cursor-pointer`}
             />
           </div>
           <a className="text-left my-2 text-gray-800" href="tel:09139939426">
@@ -60,5 +62,34 @@ function PersonCard({ data, clickOnHeart }) {
     </div>
   );
 }
+
+PersonCard.propTypes = {
+  data: PropTypes.shape({
+    favorite: PropTypes.bool,
+    liked: PropTypes.number,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        text: PropTypes.string,
+        writer: PropTypes.shape({
+          id: PropTypes.number,
+          name: PropTypes.string,
+          family: PropTypes.string,
+          date: PropTypes.string,
+        }),
+      })
+    ),
+    notes: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        text: PropTypes.string,
+        date: PropTypes.string,
+      })
+    ),
+    name: PropTypes.string,
+    skills: PropTypes.arrayOf(PropTypes.string),
+  }),
+  clickOnHeart: PropTypes.func.isRequired,
+};
 
 export default React.memo(PersonCard);
