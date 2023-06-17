@@ -10,33 +10,36 @@ function App() {
       id: 1,
       name: "میلاد حسنی",
       skills: ["مهندس عمران", "برقکار", "تراکتور"],
-      favorite:true
+      favorite: true
     },
-    { id: 2,favorite:false, name: "سجاد حسنی", skills: ["داربست ", "قالب بندی"] },
-    { id: 3,favorite:false,  name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 4,favorite:true,  name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 5,favorite:false,  name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 6,favorite:true,  name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
-    { id: 7,favorite:false,  name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    { id: 2, favorite: false, name: "سجاد حسنی", skills: ["داربست ", "قالب بندی"] },
+    { id: 3, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    { id: 4, favorite: true, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    { id: 5, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    { id: 6, favorite: true, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
+    { id: 7, favorite: false, name: "عباد حسنی", skills: ["طراحی نما", "پیمانکار"] },
     // Add more people data
-  ])
+  ]);
+
   const [filterFavorites, setFilterFavorites] = useState(false);
   const [sortBy, setSortBy] = useState("");
-  const [isFilterPageOpen, setIsFilterPageOpen] = useState(false);
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
-  const clickOnHeart=useCallback(
-    selectedCard => {
-      const index=dataPeople.findIndex((person)=>person.id ===selectedCard.id);
-      if(index !==-1){
-        const updatedPeople =[...dataPeople];
-        updatedPeople[index].favorite=!updatedPeople[index].favorite;
-        setDataPeople(updatedPeople)
+  const clickOnHeart = useCallback(
+    (selectedCard) => {
+      const index = dataPeople.findIndex((person) => person.id === selectedCard.id);
+      if (index !== -1) {
+        const updatedPeople = [...dataPeople];
+        updatedPeople[index].favorite = !updatedPeople[index].favorite;
+        setDataPeople(updatedPeople);
       }
     },
-    [dataPeople],
-  )
+    [dataPeople]
+  );
+
   const handleFilterFavorites = () => {
     setFilterFavorites((prevState) => !prevState);
+    setIsFilterMenuOpen(true);
   };
 
   const handleSortBy = () => {
@@ -45,6 +48,7 @@ function App() {
     } else {
       setSortBy("asc");
     }
+    setIsFilterMenuOpen(true);
   };
 
   const filteredAndSortedPeople = dataPeople
@@ -58,17 +62,15 @@ function App() {
       return 0;
     });
 
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      
-      <Header/>
+      <Header />
 
       {/* Main content */}
       <main className="flex-grow">
         <div className="container mx-auto py-4 px-6">
-        <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4">
             <button
               onClick={handleFilterFavorites}
               className="flex items-center space-x-1 px-3 py-1 bg-gray-900 text-white rounded-lg focus:outline-none"
@@ -86,37 +88,30 @@ function App() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Person card */}
-            {dataPeople.map(person => (
-              <PersonCard data={person} key={person.id} clickOnHeart={clickOnHeart}/>
+            {filteredAndSortedPeople.map((person) => (
+              <PersonCard data={person} key={person.id} clickOnHeart={clickOnHeart} />
             ))}
           </div>
-          {isFilterPageOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center">
-          {/* Add your filter/sort page content and logic here */}
-          <div className="bg-white rounded-lg p-4">
-            <h3 className="text-xl font-bold mb-2">Filter/Sort Page</h3>
-            {/* Add your filter/sort options here */}
-            {/* Close button */}
-            <button
-              onClick={() => setIsFilterPageOpen(false)}
-              className="text-white bg-gray-900 rounded-md px-3 py-1 focus:outline-none"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+          {isFilterMenuOpen && (
+            <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center">
+              {/* Add your filter/sort menu content and logic here */}
+              <div className="bg-white rounded-lg p-4">
+                <h3 className="text-xl font-bold mb-2">Filter/Sort Menu</h3>
+                {/* Add your filter/sort options here */}
+                {/* Close button */}
+                <button
+                  onClick={() => setIsFilterMenuOpen(false)}
+                  className="text-white bg-gray-900 rounded-md px-3 py-1 focus:outline-none"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </main>
-
-      
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
