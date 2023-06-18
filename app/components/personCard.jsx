@@ -20,7 +20,7 @@ function PersonCard({ data, clickOnHeart }) {
         <div className="h-full aspect-square rounded-sm shadow-sm relative">
           <Image
             className="rounded-md border-l-gray-300 border-l-2"
-            src=""
+            src="/images/milad.jpeg"
             alt="My Image"
             fill
           />
