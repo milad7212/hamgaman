@@ -4,7 +4,7 @@ import React, { useCallback, useState } from "react";
 import Header from "../components/header";
 import PersonCard from "../components/personCard";
 import { RiFilter2Fill, RiArrowUpDownFill } from "react-icons/ri";
-
+import Select from 'react-select';
 const App = () => {
   const [dataPeople, setDataPeople] = useState([
     {
