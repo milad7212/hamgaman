@@ -4,7 +4,7 @@ import React, { useCallback, useState } from "react";
 import Header from "../components/header";
 import PersonCard from "../components/personCard";
 import { RiFilter2Fill, RiArrowUpDownFill } from "react-icons/ri";
-import Select from 'react-select';
+import Select from "react-select";
 const App = () => {
   const [dataPeople, setDataPeople] = useState([
     {
@@ -86,8 +86,14 @@ const App = () => {
   const [sortBy, setSortBy] = useState("");
   const [filterFavorites, setFilterFavorites] = useState(false);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
-  const [isSortMenuOpen, setIsSortMenuOpen] = useState(false)
-
+  const [isSortMenuOpen, setIsSortMenuOpen] = useState(false);
+  const [Options, setOptions] = useState([
+    { value: "1", label: "عمران" },
+    { value: "2", label: "داربست" },
+    { value: "3", label: "مکانیک" },
+    { value: "4", label: "کاشی" },
+    { value: "5", label: "کناف" },
+  ]);
   const clickOnHeart = useCallback(
     (selectedCard) => {
       const updatedPeople = dataPeople.map((person) => {
@@ -192,9 +198,9 @@ const App = () => {
   const openSortModal = () => {
     setIsSortMenuOpen(true);
   };
-  const closeSortModal=()=>{
-    setIsSortMenuOpen(false)
-  }
+  const closeSortModal = () => {
+    setIsSortMenuOpen(false);
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -236,6 +242,19 @@ const App = () => {
                     className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none w-full"
                     onChange={handleFilterByName}
                   />
+                  <Select
+                    className="basic-single"
+                    classNamePrefix="select"
+                    defaultValue={Options[0]}
+                    isClearable={true}
+                    isRtl={true}
+                    isSearchable={true}
+                    placeholder="همه مشاغل"
+                    name="color"
+                    onChange={handleFilterByJob}
+                    options={Options}
+                  />
+
                   <button
                     onClick={handleFilterByHasLikeFromMe}
                     className="btn-filter block"
@@ -260,16 +279,6 @@ const App = () => {
                   >
                     نوشته دار توسط من
                   </button>
-                  <select
-                    onChange={(e) => handleFilterByJob(e.target.value)}
-                    className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none w-full"
-                  >
-                    <option value="">همه مشاغل</option>
-                    <option value="مهندس عمران">مهندس عمران</option>
-                    <option value="برقکار">برقکار</option>
-                    <option value="تراکتور">تراکتور</option>
-                  </select>
-                 
                 </div>
                 <button
                   onClick={closeFilterModal}
@@ -280,12 +289,11 @@ const App = () => {
               </div>
             </div>
           )}
-          
+
           {isSortMenuOpen && (
             <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center">
               <div className="bg-white rounded-lg p-6 w-96">
                 <div className="space-y-4">
-                  
                   <button
                     onClick={handleSortByAlphabet}
                     className="btn-sort block"
