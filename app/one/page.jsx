@@ -280,12 +280,20 @@ const App = () => {
                     نوشته دار توسط من
                   </button>
                 </div>
-                <button
-                  onClick={closeFilterModal}
-                  className="text-white bg-gray-900 rounded-md px-4 py-2 mt-6 focus:outline-none"
-                >
-                  Close
-                </button>
+                <div className="flex justify-between mt-6">
+          <button
+            onClick={closeFilterModal}
+            className="text-white bg-blue-500 rounded-md px-4 py-2 focus:outline-none"
+          >
+            اعمال
+          </button>
+          <button
+            onClick={closeFilterModal}
+            className="text-white bg-gray-900 rounded-md px-4 py-2 focus:outline-none"
+          >
+            بستن
+          </button>
+        </div>
               </div>
             </div>
           )}
