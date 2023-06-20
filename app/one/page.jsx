@@ -213,14 +213,14 @@ const App = () => {
               className="flex items-center space-x-1 px-3 py-1 bg-gray-900 text-white rounded-lg focus:outline-none"
             >
               <RiFilter2Fill size={18} />
-              <span>{filterFavorites ? "All" : "Favorites"}</span>
+              <span>فیلترها</span>
             </button>
             <button
               onClick={openSortModal}
               className="flex items-center space-x-1 px-3 py-1 bg-gray-900 text-white rounded-lg focus:outline-none"
             >
               <RiArrowUpDownFill size={18} />
-              <span>{sortBy === "asc" ? "A-Z" : "Z-A"}</span>
+              <span>مرتب سازی</span>
             </button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
