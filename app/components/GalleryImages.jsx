@@ -16,6 +16,54 @@ const Gallery = () => {
       src: '/images/milad.jpeg',
       caption: 'Image 2',
     },
+    {
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },
+    {
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },
+    {
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },
+    {
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },{
+      id: 2,
+      src: '/images/milad.jpeg',
+      caption: 'Image 2',
+    },
     // Add more images here
   ];
 
@@ -25,9 +73,9 @@ const Gallery = () => {
 
   return (
     <div>
-      <div className="flex justify-end mb-4">
+     {false&& <div className="flex justify-end mb-4">
         <button
-          className={`mr-2 p-2 ${
+          className={`ml-2 p-2 rounded-sm ${
             view === 'grid' ? 'bg-blue-500 text-white' : 'bg-gray-200'
           }`}
           onClick={() => handleChangeView('grid')}
@@ -42,14 +90,14 @@ const Gallery = () => {
         >
           <FaList />
         </button>
-      </div>
+      </div>}
 
       {view === 'grid' ? (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-[1px]">
           {images.map((image) => (
             <div key={image.id}>
-              <img src={image.src} alt={image.caption} className="w-full" />
-              <p>{image.caption}</p>
+              <img src={image.src} alt={image.caption} className="w-full rounded-sm" />
+              {/* <p>{image.caption}</p> */}
             </div>
           ))}
         </div>
@@ -57,7 +105,7 @@ const Gallery = () => {
         <ul>
           {images.map((image) => (
             <li key={image.id} className="flex items-center my-2">
-              <img src={image.src} alt={image.caption} className="w-1/4" />
+              <img src={image.src} alt={image.caption} className="w-1/4 rounded-md" />
               <p className="ml-4">{image.caption}</p>
             </li>
           ))}
