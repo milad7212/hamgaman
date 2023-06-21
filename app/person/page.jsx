@@ -10,8 +10,8 @@ const ConstructionPage = () => {
     setActiveTab(index);
   };
   const handleChangeView = (newView) => {
-    // setView(newView);
-    console.log(newView);
+    setView(newView);
+    // console.log(newView);
   };
 
   return (
@@ -106,7 +106,7 @@ const ConstructionPage = () => {
         <div className="p-1">
           {activeTab === 0 && (
             <div>
-              <GalleryImages />
+              <GalleryImages view={view}/>
 
               {/* Add more photos or customize the photo display */}
             </div>

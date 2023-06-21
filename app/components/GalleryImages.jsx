@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { FaTh, FaList } from 'react-icons/fa';
 
-const Gallery = () => {
-  const [view, setView] = useState('grid');
+const Gallery = ({view}) => {
+  // const [view, setView] = useState('grid');
 
   const images = [
     {
@@ -67,30 +67,13 @@ const Gallery = () => {
     // Add more images here
   ];
 
-  const handleChangeView = (newView) => {
-    setView(newView);
-  };
+  // const handleChangeView = (newView) => {
+  //   setView(newView);
+  // };
 
   return (
     <div>
-     {false&& <div className="flex justify-end mb-4">
-        <button
-          className={`ml-2 p-2 rounded-sm ${
-            view === 'grid' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-          }`}
-          onClick={() => handleChangeView('grid')}
-        >
-          <FaTh />
-        </button>
-        <button
-          className={`p-2 ${
-            view === 'list' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-          }`}
-          onClick={() => handleChangeView('list')}
-        >
-          <FaList />
-        </button>
-      </div>}
+
 
       {view === 'grid' ? (
         <div className="grid grid-cols-3 gap-[1px]">
