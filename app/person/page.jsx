@@ -1,10 +1,14 @@
 "use client";
 import React, { useState } from "react";
+
 import GalleryImages from "../components/GalleryImages";
 import { FaTh, FaList } from "react-icons/fa";
 const ConstructionPage = () => {
+ 
   const [activeTab, setActiveTab] = useState(0);
   const [view, setView] = useState("grid");
+  
+  
 
   const handleTabChange = (index) => {
     setActiveTab(index);
@@ -15,7 +19,7 @@ const ConstructionPage = () => {
   };
 
   return (
-    <div className="container mx-auto  mt-4">
+    <div className="container mx-auto  mt-4" >
       <div className="flex items-center mb-4">
         <img
           src="/images/milad.jpeg" // Replace with the actual path to the profile picture
@@ -23,7 +27,7 @@ const ConstructionPage = () => {
           className="w-20 h-20 rounded-full mr-4"
         />
         <div className="mr-4">
-          <h6 className="text-lg font-semibold">میلاد حسنی</h6>
+          <h6  className="text-lg font-semibold">میلاد حسنی</h6>
 
           <div className="flex flex-col">
             <div className="flex">
@@ -51,9 +55,14 @@ const ConstructionPage = () => {
           >
             <button
               onClick={() => handleTabChange(0)}
-              className="py-2 px-4 block focus:outline-none"
+              className="relative focus:outline-none"
             >
-              عکس
+              <span className="py-2 px-4 block">عکس</span>
+             
+                <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
+                  11
+                </span>
+              
             </button>
           </li>
           <li
@@ -65,9 +74,14 @@ const ConstructionPage = () => {
           >
             <button
               onClick={() => handleTabChange(1)}
-              className="py-2 px-4 block focus:outline-none"
+              className="relative focus:outline-none"
             >
-              نظرات
+               <span className="py-2 px-4 block">نظرات</span>
+             
+             <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
+               11
+             </span>
+              
             </button>
           </li>
           <li
@@ -106,7 +120,7 @@ const ConstructionPage = () => {
         <div className="p-1">
           {activeTab === 0 && (
             <div>
-              <GalleryImages view={view}/>
+              <GalleryImages view={view} />
 
               {/* Add more photos or customize the photo display */}
             </div>

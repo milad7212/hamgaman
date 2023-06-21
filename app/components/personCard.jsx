@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from 'next/router';
 import Image from "next/image";
 import { BsFillHeartFill } from "react-icons/bs";
 import { GoComment, GoNote } from "react-icons/go";
@@ -6,6 +7,10 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 function PersonCard({ data, clickOnHeart }) {
+  const router = useRouter();
+  const handleDivClick = () => {
+    router.push('/person'); // Replace '/new-route' with the desired route you want to navigate to
+  };
   const cardClass = classNames("bg-white", "rounded", "shadow-lg", "overflow-hidden", {
     "ring-gray-900 ring-4": data.favorite,
   });
@@ -15,7 +20,7 @@ function PersonCard({ data, clickOnHeart }) {
   });
 
   return (
-    <div className={cardClass}>
+    <div className={cardClass} onClick={handleDivClick}>
       <div className="h-40 p-1 bg-gray-900 rounded-b-sm flex overflow-hidden relative">
         <div className="h-full aspect-square rounded-sm shadow-sm relative">
           <Image
