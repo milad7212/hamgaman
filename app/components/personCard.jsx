@@ -1,5 +1,7 @@
+"use client"
+
 import React from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import { BsFillHeartFill } from "react-icons/bs";
 import { GoComment, GoNote } from "react-icons/go";
@@ -9,7 +11,7 @@ import PropTypes from "prop-types";
 function PersonCard({ data, clickOnHeart }) {
   const router = useRouter();
   const handleDivClick = () => {
-    router.push('/person'); // Replace '/new-route' with the desired route you want to navigate to
+    router.push('/person'); 
   };
   const cardClass = classNames("bg-white", "rounded", "shadow-lg", "overflow-hidden", {
     "ring-gray-900 ring-4": data.favorite,
@@ -20,7 +22,7 @@ function PersonCard({ data, clickOnHeart }) {
   });
 
   return (
-    <div className={cardClass} onClick={handleDivClick}>
+    <div className={cardClass} >
       <div className="h-40 p-1 bg-gray-900 rounded-b-sm flex overflow-hidden relative">
         <div className="h-full aspect-square rounded-sm shadow-sm relative">
           <Image
@@ -49,7 +51,7 @@ function PersonCard({ data, clickOnHeart }) {
         </div>
       </div>
       <div className="p-3">
-        <h2 className="text-lg font-bold">{data.name}</h2>
+        <h2 className="text-lg font-bold cursor-pointer" onClick={handleDivClick}>{data.name}</h2>
         <span className="text-gray-700 my-2">{data.skills.join(" | ")}</span>
         <div className="flex items-center mt-4 justify-between">
           <div className="flex">

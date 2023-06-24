@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import GalleryImages from "../components/GalleryImages";
 import { FaTh, FaList } from "react-icons/fa";
+import ComponentCard from "../components/CommentCard";
 const ConstructionPage = () => {
  
   const [activeTab, setActiveTab] = useState(0);
@@ -127,8 +128,10 @@ const ConstructionPage = () => {
           )}
           {activeTab === 1 && (
             <div>
-              <p className="mb-2">Sample Comment 1</p>
-              <p className="mb-2">Sample Comment 2</p>
+              <ComponentCard name="میلاد حسنی" comment="برای من که کار کرد خوب بود راضی بودم فقط کمی بدقول هست"/>
+              <ComponentCard/>
+              <ComponentCard/>
+              
               {/* Add more comments or customize the comment display */}
             </div>
           )}
