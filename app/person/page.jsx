@@ -139,7 +139,7 @@ const ConstructionPage = () => {
             </div>
           )}
           {activeTab === 2 && (
-            <div>
+            <div className="px-2">
               <Resume/>
             </div>
           )}

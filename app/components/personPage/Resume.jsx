@@ -1,17 +1,13 @@
 import React from "react";
+import AparatVideo from "./AparatVideo";
 
 function Resume() {
   return (
     <div className="">
       <div className="">
-        <p className="">ویدیو</p>
-        <div className="">
-            <video controls>
-              <source
-                src="https://www.aparat.com/embed/026da?data[rnddiv]=55367381084&data[responsive]=yes"
-                type="video/mp4"
-              />
-            </video>
+        <p className="my-4 font-bold text-gray-600">ویدیو</p>
+        <div className="flex justify-center ">
+        <AparatVideo videoId="85193848181" />
         </div>
       </div>
       <div className="">
