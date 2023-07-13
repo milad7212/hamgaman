@@ -5,6 +5,7 @@ import GalleryImages from "../components/GalleryImages";
 import { FaTh, FaList } from "react-icons/fa";
 import ComponentCard from "../components/CommentCard";
 import {BsHeart} from "react-icons/bs"
+import Resume from "../components/personPage/Resume";
 const ConstructionPage = () => {
  
   const [activeTab, setActiveTab] = useState(0);
@@ -139,8 +140,7 @@ const ConstructionPage = () => {
           )}
           {activeTab === 2 && (
             <div>
-              <p>Resume content goes here.</p>
-              {/* Customize the resume content */}
+              <Resume/>
             </div>
           )}
         </div>
