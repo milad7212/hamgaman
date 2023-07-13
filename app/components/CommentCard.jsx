@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { BsFillHeartFill } from "react-icons/bs";
-import { GoComment, GoNote } from "react-icons/go";
+import { AiFillLike ,AiFillDislike } from "react-icons/ai";
+
+
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -33,17 +35,17 @@ const ComponentCard = ({ name, comment, tags }) => {
       <div className="p-3">
         <h2 className="text-lg font-bold">{name}</h2>
         <p className="text-gray-700 my-2">{comment}</p>
-        <div className="flex justify-between mt-4">
-          <div className="flex">
-            <BsFillHeartFill
+        
+          <div className="flex items-center justify-end ">
+            <AiFillLike
               size={25}
-              className={`text-${color}`}
+              className={`text-${color} mb-2`}
               onClick={() => setLikes(likes + 1)}
+              color="green"
             />
-            <span>{likes}</span>
-            <GoComment size={25} className="ml-3" />
-            <span>{dislikes}</span>
-            <BsFillHeartFill
+            <span className="mx-2">{likes}</span>
+            
+            <AiFillDislike
               size={25}
               className={`text-${color}`}
               color="red"
@@ -51,7 +53,7 @@ const ComponentCard = ({ name, comment, tags }) => {
             />
           </div>
           
-        </div>
+        
       </div>
       
     </div>

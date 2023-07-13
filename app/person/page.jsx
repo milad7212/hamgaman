@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import GalleryImages from "../components/GalleryImages";
 import { FaTh, FaList } from "react-icons/fa";
 import ComponentCard from "../components/CommentCard";
+import {BsHeart} from "react-icons/bs"
 const ConstructionPage = () => {
  
   const [activeTab, setActiveTab] = useState(0);
@@ -21,7 +22,7 @@ const ConstructionPage = () => {
 
   return (
     <div className="container mx-auto  mt-4" >
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 ">
         <img
           src="/images/milad.jpeg" // Replace with the actual path to the profile picture
           alt="Profile Picture"
@@ -32,17 +33,18 @@ const ConstructionPage = () => {
 
           <div className="flex flex-col">
             <div className="flex">
-              <span className="ml-4">Posts: 10</span>
-              <span>Likes: 100</span>
+              <span className="ml-4">پست :10</span>
+              <span>مورد پسند : 50</span>
             </div>
           </div>
         </div>
+        <div className="mr-auto flex justify-center items-center  w-20 h-20">
+          <BsHeart size={30} className="cursor-pointer"/>
+        </div>
       </div>
-      <div className="mr-3 mt-2 h-24  overflow-hidden">
+      <div className="mr-3 mt-2 h-24  overflow-hidden leading-8">
         <span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-          reiciendis beatae veniam repellendus maiores tempore alias dicta, sit
-          harum nemo!
+         فارغ التحصیل کارشناسی ارشد عمران دانشگاه باهنر .سابقه بیش از 6 سال در صنعت ساخت و بهینه کردن سازه و کاهش هزینه 
         </span>
       </div>
       <div className="w-full">
