@@ -32,7 +32,7 @@ const ComponentCard = ({ name, comment, tags }) => {
         },
       )}
     >
-      <div className="p-3">
+      <div className="p-3 ">
         <h2 className="text-lg font-bold">{name}</h2>
         <p className="text-gray-700 my-2">{comment}</p>
         
@@ -43,13 +43,13 @@ const ComponentCard = ({ name, comment, tags }) => {
               onClick={() => setLikes(likes + 1)}
               color="green"
             />
-            <span className="mx-2">{likes}</span>
+            <span className="mx-2 text-left">{likes}</span>
             
             <AiFillDislike
               size={25}
               className={`text-${color}`}
               color="red"
-              onClick={() => setDislikes(dislikes + 1)}
+              onClick={() => setLikes(likes - 1)}
             />
           </div>
           
