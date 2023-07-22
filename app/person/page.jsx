@@ -104,16 +104,16 @@ const ConstructionPage = () => {
           </li>
           <div className="flex justify-end mb-4 mr-auto ml-2">
             <button
-              className={`ml-2 p-2 rounded-sm ${
-                view === "grid" ? "bg-blue-500 text-white" : "bg-gray-200"
+              className={`ml-2 p-2 rounded-md ${
+                view === "grid" ? "bg-blue-500 text-white" : ""
               }`}
               onClick={() => handleChangeView("grid")}
             >
               <FaTh />
             </button>
             <button
-              className={`p-2 ${
-                view === "list" ? "bg-blue-500 text-white" : "bg-gray-200"
+              className={`p-2 rounded-md ${
+                view === "list" ? "bg-blue-500 text-white" : ""
               }`}
               onClick={() => handleChangeView("list")}
             >

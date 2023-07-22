@@ -87,8 +87,8 @@ const Gallery = ({view}) => {
       ) : (
         <ul>
           {images.map((image) => (
-            <li key={image.id} className="flex items-center my-2">
-              <img src={image.src} alt={image.caption} className="w-1/4 rounded-md" />
+            <li key={image.id} className="flex flex-col items-center my-2">
+              <img src={image.src} alt={image.caption} className="w-full rounded-md" />
               <p className="ml-4">{image.caption}</p>
             </li>
           ))}
