@@ -11,18 +11,20 @@ function Resume() {
         <AparatVideo videoId="85193848181" />
         </div>
       </div>
-      <div className="flex-wrap gap-4">
-        <p className="">مهارت ها</p>
-        <SkillBadge name="طراحی داخلی"/>
-        <SkillBadge name="محاسبات سازه"/>
-        <SkillBadge name="کارشناس ارشد دادگستری"/>
-      </div>
       <div className="">
+      <p className="my-4 font-bold text-gray-600">مهارت ها</p>
+        <div className="flex-wrap gap-4">
+          <SkillBadge name="طراحی داخلی"/>
+          <SkillBadge name="محاسبات سازه"/>
+          <SkillBadge name="کارشناس ارشد دادگستری"/>
+        </div>
+      </div>
+      {/* <div className="">
         <p className="">صدا</p>
       </div>
       <div className="">
         <p className="">نوشته</p>
-      </div>
+      </div> */}
     </div>
   );
 }
