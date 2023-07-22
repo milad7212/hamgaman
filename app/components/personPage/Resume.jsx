@@ -1,5 +1,6 @@
 import React from "react";
 import AparatVideo from "./AparatVideo";
+import SkillBadge from "./SkillBadge";
 
 function Resume() {
   return (
@@ -10,8 +11,11 @@ function Resume() {
         <AparatVideo videoId="85193848181" />
         </div>
       </div>
-      <div className="">
+      <div className="flex-wrap gap-4">
         <p className="">مهارت ها</p>
+        <SkillBadge name="طراحی داخلی"/>
+        <SkillBadge name="محاسبات سازه"/>
+        <SkillBadge name="کارشناس ارشد دادگستری"/>
       </div>
       <div className="">
         <p className="">صدا</p>

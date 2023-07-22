@@ -130,7 +130,7 @@ const ConstructionPage = () => {
             </div>
           )}
           {activeTab === 1 && (
-            <div>
+            <div >
               <ComponentCard name="میلاد حسنی" comment="برای من که کار کرد خوب بود راضی بودم فقط کمی بدقول هست"/>
               <ComponentCard/>
               <ComponentCard/>
