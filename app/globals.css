@@ -29,3 +29,26 @@ body {
   }
 
 
+
+  /* Make the scrollbar width the same as the content width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Make the scrollbar track transparent */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Make the scrollbar thumb the same color as the content */
+::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+}
+
+
+/* Make the scrollbar thumb a little bit wider than the content */
+::-webkit-scrollbar-thumb:hover {
+  width: 2px;
+}
+
