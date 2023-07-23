@@ -22,127 +22,127 @@ const ConstructionPage = () => {
   };
 
   return (
-    <div className="container mx-auto  mt-4" >
-      <div className="flex items-center mb-4 ">
-        <img
-          src="/images/milad.jpeg" // Replace with the actual path to the profile picture
-          alt="Profile Picture"
-          className="w-20 h-20 rounded-full mr-4"
-        />
-        <div className="mr-4">
-          <h6  className="text-lg font-semibold">میلاد حسنی</h6>
-
-          <div className="flex flex-col">
-            <div className="flex">
-              <span className="ml-4">پست :10</span>
-              <span>مورد پسند : 50</span>
+    <div className="bg-gray-200">
+      <div className="container mx-auto  pt-4 " >
+        <div className="flex items-center mb-4 ">
+          <img
+            src="/images/milad.jpeg" // Replace with the actual path to the profile picture
+            alt="Profile Picture"
+            className="w-20 h-20 rounded-full mr-4"
+          />
+          <div className="mr-4">
+            <h6  className="text-lg font-semibold">میلاد حسنی</h6>
+            <div className="flex flex-col">
+              <div className="flex">
+                <span className="ml-4">پست :10</span>
+                <span>مورد پسند : 50</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mr-auto flex justify-center items-center  w-20 h-20">
-          <BsHeart size={30} className="cursor-pointer"/>
-        </div>
-      </div>
-      <div className="mr-3 mt-2 h-24  overflow-hidden leading-8">
-        <span>
-         فارغ التحصیل کارشناسی ارشد عمران دانشگاه باهنر .سابقه بیش از 6 سال در صنعت ساخت و بهینه کردن سازه و کاهش هزینه 
-        </span>
-      </div>
-      <div className="w-full">
-        <ul className="flex border-b">
-          <li
-            className={`mr-4 ${
-              activeTab === 0
-                ? "text-blue-500 border-blue-500"
-                : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
-            }`}
-          >
-            <button
-              onClick={() => handleTabChange(0)}
-              className="relative focus:outline-none"
-            >
-              <span className="py-2 px-4 block">عکس</span>
-             
-                <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
-                  11
-                </span>
-              
-            </button>
-          </li>
-          <li
-            className={`mr-4 ${
-              activeTab === 1
-                ? "text-blue-500 border-blue-500"
-                : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
-            }`}
-          >
-            <button
-              onClick={() => handleTabChange(1)}
-              className="relative focus:outline-none"
-            >
-               <span className="py-2 px-4 block">نظرات</span>
-             
-             <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
-               11
-             </span>
-              
-            </button>
-          </li>
-          <li
-            className={`mr-4 ${
-              activeTab === 2
-                ? "text-blue-500 border-blue-500"
-                : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
-            }`}
-          >
-            <button
-              onClick={() => handleTabChange(2)}
-              className="py-2 px-4 block focus:outline-none"
-            >
-              رزومه
-            </button>
-          </li>
-          <div className="flex justify-end mb-4 mr-auto ml-2">
-            <button
-              className={`ml-2 p-2 rounded-md ${
-                view === "grid" ? "bg-blue-500 text-white" : ""
-              }`}
-              onClick={() => handleChangeView("grid")}
-            >
-              <FaTh />
-            </button>
-            <button
-              className={`p-2 rounded-md ${
-                view === "list" ? "bg-blue-500 text-white" : ""
-              }`}
-              onClick={() => handleChangeView("list")}
-            >
-              <FaList />
-            </button>
+          <div className="mr-auto flex justify-center items-center  w-20 h-20">
+            <BsHeart size={30} className="cursor-pointer"/>
           </div>
-        </ul>
-        <div className="p-1">
-          {activeTab === 0 && (
-            <div>
-              <GalleryImages view={view} />
-
-              {/* Add more photos or customize the photo display */}
+        </div>
+        <div className="mr-3 mt-2 h-24  overflow-hidden leading-8">
+          <span>
+           فارغ التحصیل کارشناسی ارشد عمران دانشگاه باهنر .سابقه بیش از 6 سال در صنعت ساخت و بهینه کردن سازه و کاهش هزینه
+          </span>
+        </div>
+        <div className="w-full">
+          <ul className="flex border-b">
+            <li
+              className={`mr-4 ${
+                activeTab === 0
+                  ? "text-blue-500 border-blue-500"
+                  : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
+              }`}
+            >
+              <button
+                onClick={() => handleTabChange(0)}
+                className="relative focus:outline-none"
+              >
+                <span className="py-2 px-4 block">عکس</span>
+      
+                  <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
+                    11
+                  </span>
+      
+              </button>
+            </li>
+            <li
+              className={`mr-4 ${
+                activeTab === 1
+                  ? "text-blue-500 border-blue-500"
+                  : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
+              }`}
+            >
+              <button
+                onClick={() => handleTabChange(1)}
+                className="relative focus:outline-none"
+              >
+                 <span className="py-2 px-4 block">نظرات</span>
+      
+               <span className="absolute top-0 -left-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none  rounded-full">
+                 11
+               </span>
+      
+              </button>
+            </li>
+            <li
+              className={`mr-4 ${
+                activeTab === 2
+                  ? "text-blue-500 border-blue-500"
+                  : "text-gray-500 hover:text-blue-500 hover:border-blue-500"
+              }`}
+            >
+              <button
+                onClick={() => handleTabChange(2)}
+                className="py-2 px-4 block focus:outline-none"
+              >
+                رزومه
+              </button>
+            </li>
+            <div className="flex justify-end mb-4 mr-auto ml-2">
+              <button
+                className={`ml-2 p-2 rounded-md ${
+                  view === "grid" ? "bg-blue-500 text-white" : ""
+                }`}
+                onClick={() => handleChangeView("grid")}
+              >
+                <FaTh />
+              </button>
+              <button
+                className={`p-2 rounded-md ${
+                  view === "list" ? "bg-blue-500 text-white" : ""
+                }`}
+                onClick={() => handleChangeView("list")}
+              >
+                <FaList />
+              </button>
             </div>
-          )}
-          {activeTab === 1 && (
-            <div >
-              <ComponentCard name="میلاد حسنی" comment="برای من که کار کرد خوب بود راضی بودم فقط کمی بدقول هست"/>
-              <ComponentCard/>
-              <ComponentCard/>
-              
-              {/* Add more comments or customize the comment display */}
-            </div>
-          )}
-          {activeTab === 2 && (
-            <div className="px-2">
-              <Resume/>
-            </div>
-          )}
+          </ul>
+          <div className="p-1">
+            {activeTab === 0 && (
+              <div>
+                <GalleryImages view={view} />
+                {/* Add more photos or customize the photo display */}
+              </div>
+            )}
+            {activeTab === 1 && (
+              <div >
+                <ComponentCard name="میلاد حسنی" comment="برای من که کار کرد خوب بود راضی بودم فقط کمی بدقول هست"/>
+                <ComponentCard/>
+                <ComponentCard/>
+      
+                {/* Add more comments or customize the comment display */}
+              </div>
+            )}
+            {activeTab === 2 && (
+              <div className="px-2">
+                <Resume/>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
