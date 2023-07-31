@@ -95,11 +95,12 @@ function Page() {
       <div className="flex relative justify-center py-4">
         <span className="absolute left-6">
           <VscPreview
+          onClick={()=>console.log(dataForm)}
             size={25}
             className="text-gray-600 cursor-pointer hover:scale-105 duration-200 ease-in hover:text-gray-900"
           />
         </span>
-        {/* <span className='font-bold text-blue-600 text-xl'>فرم ساز آنلاین</span> */}
+        <span className='font-bold text-blue-600 text-xl'>فرم ساز آنلاین</span>
       </div>
       <div className="">{generateForm(dataForm)}</div>
     </div>
