@@ -29,7 +29,14 @@ function Page() {
       },
     },
   ]);
-  function onEditForm(){
+  function onEditForm(dataForm){
+    const newDataForm = [...dataForm];
+    newDataForm[dataForm.indexItem].dataForm.keyItem=dataForm.valueItem
+    // indexItem
+    // keyItem
+    // valueItem
+    setDataForm(newDataForm);
+   
 
   }
 
