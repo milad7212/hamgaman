@@ -29,6 +29,9 @@ function Page() {
       },
     },
   ]);
+  function onEditForm(){
+
+  }
 
   function generateForm(dataForm) {
     return dataForm.map((item, index) => {
@@ -41,6 +44,8 @@ function Page() {
               key={item.data.label}
             >
               <InputSample
+                onEditForm={onEditForm}
+                whichIndex={index}
                 label={item.data.label}
                 placeholder={item.data.placeholder}
               />
