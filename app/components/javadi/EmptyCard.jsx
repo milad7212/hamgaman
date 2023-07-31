@@ -4,6 +4,12 @@ import { AiOutlineDelete } from "react-icons/ai";
 function EmptyCard({ children, whichIndex, onFormAddDelete }) {
   return (
     <div className="my-8 m-4 border  relative border-dashed border-gray-400 rounded-md h-28 hover:shadow-xl duration-200 ease-in cursor-pointer hover:border-solid">
+     <div className="absolute right-0 -top-5 w-5 h-5 border border-dotted">
+      <span className="text-gray-400">
+      {whichIndex}
+      </span>
+       
+     </div>
       <div className=" absolute left-2 top-2">
         <AiOutlineDelete
           onClick={() =>
@@ -15,7 +21,7 @@ function EmptyCard({ children, whichIndex, onFormAddDelete }) {
 
       <div className=" left-0 right-0 flex justify-center absolute -top-3">
         <BsPlusCircle
-          onClick={()=>
+          onClick={() =>
             onFormAddDelete({ type: "add", indexItem: whichIndex })
           }
           size={25}
