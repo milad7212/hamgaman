@@ -29,9 +29,9 @@ function Page() {
       },
     },
   ]);
-  function onEditForm(dataForm){
+  function onEditForm(data){
     const newDataForm = [...dataForm];
-    newDataForm[dataForm.indexItem].dataForm.keyItem=dataForm.valueItem
+    newDataForm[data.indexItem].data.keyItem=data.valueItem
     // indexItem
     // keyItem
     // valueItem
