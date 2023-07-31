@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { BiSearchAlt,BiMenuAltLeft } from "react-icons/bi";
 import { FaSignInAlt } from "react-icons/fa";
-
+import Image from 'next/image'
 function LoginButton() {
   return (
     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-md flex items-center gap-2 transition duration-300 transform hover:scale-105">
@@ -40,7 +40,14 @@ function Header() {
         <span className="block md:hidden ">
           <BiMenuAltLeft size={40}/>
         </span>
+        <Image
+      src="/Hamgaman.png"
+      width={500}
+      height={500}
+      alt="Picture of the author"
+    />
         <h1 className="text-2xl font-bold text-gray-200 whitespace-nowrap text-center mb-2 md:mb-0">
+          
           همگامان سازه
         </h1>
        

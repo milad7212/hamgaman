@@ -6,6 +6,7 @@ import { FaTh, FaList } from "react-icons/fa";
 import ComponentCard from "../components/CommentCard";
 import {BsHeart} from "react-icons/bs"
 import Resume from "../components/personPage/Resume";
+import Header from "../components/header";
 const ConstructionPage = () => {
  
   const [activeTab, setActiveTab] = useState(0);
@@ -22,7 +23,8 @@ const ConstructionPage = () => {
   };
 
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 min-h-screen">
+       <Header />
       <div className="container mx-auto  pt-4 " >
         <div className="flex items-center mb-4 ">
           <img
