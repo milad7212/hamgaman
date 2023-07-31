@@ -69,6 +69,9 @@ function Page() {
         break;
 
       case "delete":
+        newDataForm.splice(data.indexItem, 1);
+        setDataForm(newDataForm);
+
         break;
       default:
         break;
